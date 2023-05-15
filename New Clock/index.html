@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clock</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="nightbg"></div>
+    <a href="#" id="button">Click Here!</a>
+    <div class="planet">
+      <div id="hour"></div>
+      <div id="minute"></div>
+      <div id="second"></div>
+    </div>
+    <div class="star pos-star1 "></div>
+    <div class="star pos-star2 "></div>
+    <div class="star pos-star3 "></div>
+    <div class="star pos-star4 "></div>
+    <div class="star pos-star5 "></div>
+    <div class="star pos-star6 "></div>
+    <div class="star pos-star7 "></div>
+    <div class="star pos-star8 "></div>
+    <div class="star pos-star9 "></div>
+    <div class="star pos-star10 "></div>
+    <div class="star pos-star11 "></div>
+    <div class="star pos-star12 "></div>
+  </div>
+
+  <script>
+    const hour = document.getElementById('hour')
+    const minute = document.getElementById('minute')
+    const second = document.getElementById('second')
+
+    const date = new Date()
+    hour.style.transform = `rotate(${date.getHours() * 30 + 90}deg)`
+    minute.style.transform = `rotate(${date.getMinutes() * 6 + 90}deg)`
+    second.style.transform = `rotate(${date.getSeconds() * 6 + 90}deg)`
+
+    setInterval(() => {
+      const date = new Date()
+      hour.style.transform = `rotate(${date.getHours() * 30 + 90}deg)`
+      minute.style.transform = `rotate(${date.getMinutes() * 6 + 90}deg)`
+      second.style.transform = `rotate(${date.getSeconds() * 6 + 90}deg)`
+    }, 1000)
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var button = document.getElementById('button');
+      button.addEventListener('click', function () {
+        document.body.classList.toggle('day');
+      });
+    });
+
+  </script>
+</body>
+
+</html>
